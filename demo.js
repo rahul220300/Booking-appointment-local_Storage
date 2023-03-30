@@ -3,7 +3,7 @@ let email=document.getElementById("email");
 let sub=document.getElementById("submit");
 let arr=JSON.parse(localStorage.getItem("data"))||[];
 sub.addEventListener("click",(e)=>{
-   // e.preventDefault();
+    e.preventDefault();
     let obj={
         name:nme.value,
         email:email.value
@@ -13,4 +13,12 @@ sub.addEventListener("click",(e)=>{
     localStorage.setItem("data",JSON.stringify(arr));
 });
 
-//localStorage.setItem("data","ram");
+showUserNameOnScreen(obj);
+function showUserNameOnScreen(obj){
+    const parentElm=document.getElementById('listItem');
+    const children = document.createElement('li');
+    children.textContent = obj.name +" "+obj.email ;
+    parentElm.appendChild(children);
+}
+
+
