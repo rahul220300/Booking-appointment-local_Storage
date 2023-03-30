@@ -33,6 +33,22 @@ sub.addEventListener("click",(ex)=>{
         localStorage.setItem("data",JSON.stringify(a));
     })
     row.append(col1,col2,col3);
+    let col4=document.createElement("td");
+    col4.innerText="edit";
+    col4.addEventListener("click",(el)=>{
+        el.target.parentNode.parentNode.removeChild(el.target.parentNode);
+        let ar=JSON.parse(localStorage.getItem("data"))||[];
+        arr=ar;
+        nme.value=e.name;
+        email.value=e.email;
+         let a=ar.filter((ele)=>{
+             return e.name!=ele.name;
+         })
+         localStorage.setItem("data",JSON.stringify(a));
+    })
+    row.append(col1,col2,col3,col4);
     tbody.append(row);
 })
 })
+
+
