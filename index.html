@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -6,11 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/dom.css">
   <title>Document</title>
 </head>
 <body>
-   <div class="container" id="form1">
+   <div class="container">
      <div class="row">
       <div class="col-12"><h3>Add Details</h3></div>
      </div>
@@ -28,8 +28,20 @@
       </div>
      </div>
    </div>
-   <ul id="listItem"></ul>
-   <script src="demo.js"></script>
-</body>
-</html>
+   <div class="container">
+    <table class="table table-dark">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>email</th>
+          <th>delete</th>
+        </tr>
+      </thead>
+      <tbody id="tbody">
 
+      </tbody>
+    </table>
+   </div>
+</body>
+<script src="demo.js"></script>
+</html>
