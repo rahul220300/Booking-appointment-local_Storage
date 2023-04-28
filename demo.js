@@ -4,13 +4,18 @@ let sub=document.getElementById("submit");
 var arr=JSON.parse(localStorage.getItem("data"))||[];
 sub.addEventListener("click",(ex)=>{
     ex.preventDefault();
+   
     let obj={
         name:nme.value,
         email:email.value
     };
 
-    arr.push(obj);
-    localStorage.setItem("data",JSON.stringify(arr));
+    axios.post("https://crudcrud.com/api/6851d5ab91fe49d9bb2c9a4731b73aa6/bookappointmentData").then((res)=>{
+        console.log(res)
+    }).catch((err)=>{console.log(err)})
+    //arr.push(obj);
+
+    //localStorage.setItem("data",JSON.stringify(arr));
     let tbody=document.getElementById("tbody");
     tbody.innerHTML="";
     arr.forEach((e)=>{
